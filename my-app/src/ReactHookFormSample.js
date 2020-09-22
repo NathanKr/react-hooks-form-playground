@@ -1,8 +1,11 @@
 import React from "react";
-import { useForm } from "react-hook-form";
+import { useForm} from "react-hook-form";
 
 const ReactHookFormSample = () => {
-  const { handleSubmit, register, errors } = useForm();
+  const { handleSubmit, register, errors } = useForm({defaultValues:{
+      email:"natankrasney@gmail.com",
+      username:"Nathan Krasney"
+  }});
   const onSubmit = values => console.log(values);
 
   return (
