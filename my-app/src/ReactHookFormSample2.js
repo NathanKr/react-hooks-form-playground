@@ -16,6 +16,18 @@ function ReactHookFormSample2() {
       stationName: "",
     },
   });
+
+  const getOptionsElements = array => array.map((it, index) => (
+    <option key={index} value={it}>
+      {it}
+    </option>
+  ));
+  const users = ["userName1", "userName2", "userName3"];
+  const stations = ["stationName1", "stationName2", "stationName3"];
+
+  const usersOptionsElements = getOptionsElements(users);
+  const stationsOptionsElements = getOptionsElements(stations);
+
   const onSubmit = (data) => console.log(data);
   // console.log(errors);
 
@@ -34,7 +46,9 @@ function ReactHookFormSample2() {
             "start must be < end",
         })}
       />
-      <span className="validationError">{errors.startActiveHour && errors.startActiveHour.message}</span> 
+      <span className="validationError">
+        {errors.startActiveHour && errors.startActiveHour.message}
+      </span>
 
       <input
         type="number"
@@ -49,7 +63,9 @@ function ReactHookFormSample2() {
             "end must be > start",
         })}
       />
-      <span className="validationError">{errors.endActiveHour && errors.endActiveHour.message}</span>
+      <span className="validationError">
+        {errors.endActiveHour && errors.endActiveHour.message}
+      </span>
 
       <input
         type="number"
@@ -60,7 +76,9 @@ function ReactHookFormSample2() {
           min: { value: 0, message: "treshold value must be >= 0" },
         })}
       />
-      <span className="validationError">{errors.tresholdValueKnots && errors.tresholdValueKnots.message}</span>
+      <span className="validationError">
+        {errors.tresholdValueKnots && errors.tresholdValueKnots.message}
+      </span>
 
       <select
         name="tresholdType"
@@ -70,7 +88,9 @@ function ReactHookFormSample2() {
         <option value="avg">avg</option>
         <option value="min">min</option>
       </select>
-      <span className="validationError">{errors.tresholdType && errors.tresholdType.message}</span>
+      <span className="validationError">
+        {errors.tresholdType && errors.tresholdType.message}
+      </span>
 
       <select
         name="notifyType"
@@ -80,7 +100,9 @@ function ReactHookFormSample2() {
         <option value="sms">sms</option>
         <option value="voice">voice</option>
       </select>
-      <span className="validationError">{errors.notifyType && errors.notifyType.message}</span>
+      <span className="validationError">
+        {errors.notifyType && errors.notifyType.message}
+      </span>
 
       <input
         type="number"
@@ -91,24 +113,29 @@ function ReactHookFormSample2() {
           min: { value: 0, message: "max notification must be >= 0" },
         })}
       />
-      <span className="validationError">{errors.maxNotification && errors.maxNotification.message}</span>
+      <span className="validationError">
+        {errors.maxNotification && errors.maxNotification.message}
+      </span>
 
-      <select name="userName" ref={register({ required: "user name is required" })}>
-        <option value="userName1">userName1</option>
-        <option value="userName2">userName2</option>
-        <option value="userName3">userName3</option>
+      <select
+        name="userName"
+        ref={register({ required: "user name is required" })}
+      >
+        {usersOptionsElements}
       </select>
-      <span className="validationError">{errors.userName && errors.userName.message}</span>
+      <span className="validationError">
+        {errors.userName && errors.userName.message}
+      </span>
 
       <select
         name="stationName"
         ref={register({ required: "station name is required" })}
       >
-        <option value="stationName1">stationName1</option>
-        <option value="stationName2">stationName2</option>
-        <option value="stationName3">stationName3</option>
+        {stationsOptionsElements}
       </select>
-      <span className="validationError">{errors.stationName && errors.stationName.message}</span>
+      <span className="validationError">
+        {errors.stationName && errors.stationName.message}
+      </span>
 
       <input type="submit" />
     </form>
