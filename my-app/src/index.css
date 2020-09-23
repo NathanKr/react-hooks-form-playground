@@ -41,3 +41,7 @@ input[type="submit"] {
    background-color: #286090;
    color: white;
 }
+
+.validationError{
+  color:red;
+}
