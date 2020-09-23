@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm} from "react-hook-form";
 
-const ReactHookFormSample = () => {
+const ReactHookFormSample1 = () => {
   const { handleSubmit, register, errors } = useForm({defaultValues:{
       email:"natankrasney@gmail.com",
       username:"Nathan Krasney"
@@ -35,4 +35,4 @@ const ReactHookFormSample = () => {
   );
 };
 
-export default ReactHookFormSample;
+export default ReactHookFormSample1;
