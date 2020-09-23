@@ -32,7 +32,7 @@ const ReactHookFormSample1 = () => {
       />
       {errors.username && errors.username.message}
 
-      <button type="submit">Submit</button>
+      <input type="submit" />
     </form>
   );
 };
