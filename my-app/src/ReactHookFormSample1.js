@@ -1,12 +1,14 @@
 import React from "react";
-import { useForm} from "react-hook-form";
+import { useForm } from "react-hook-form";
 
 const ReactHookFormSample1 = () => {
-  const { handleSubmit, register, errors } = useForm({defaultValues:{
-      email:"natankrasney@gmail.com",
-      username:"Nathan Krasney"
-  }});
-  const onSubmit = values => console.log(values);
+  const { handleSubmit, register, errors } = useForm({
+    defaultValues: {
+      email: "natankrasney@gmail.com",
+      username: "Nathan Krasney",
+    },
+  });
+  const onSubmit = (values) => console.log(values);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -16,8 +18,8 @@ const ReactHookFormSample1 = () => {
           required: "Required",
           pattern: {
             value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-            message: "invalid email address"
-          }
+            message: "invalid email address",
+          },
         })}
       />
       {errors.email && errors.email.message}
@@ -25,7 +27,7 @@ const ReactHookFormSample1 = () => {
       <input
         name="username"
         ref={register({
-          validate: value => value !== "admin" || "Nice try!"
+          validate: (value) => value !== "admin" || "Nice try!",
         })}
       />
       {errors.username && errors.username.message}
