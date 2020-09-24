@@ -1,7 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-//todo add labels , add errors , endActiveHour > startActiveHour , maxNotification not negative ??
 
 function ReactHookFormSample2() {
   const { register, handleSubmit, errors, getValues } = useForm({
