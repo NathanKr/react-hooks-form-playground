@@ -33,7 +33,8 @@ function ReactHookFormSample2() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-
+      {/* todo better styling */}
+      <label>Enabled</label>
       <input
         // using required cause the form not be send
         // placeholder is not working
