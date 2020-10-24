@@ -1,7 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-
 function ReactHookFormSample2() {
   const { register, handleSubmit, errors, getValues } = useForm({
     defaultValues: {
@@ -11,16 +10,18 @@ function ReactHookFormSample2() {
       tresholdType: "max",
       notifyType: "email",
       maxNotification: 1,
+      enabled:true,
       userName: "",
       stationName: "",
     },
   });
 
-  const getOptionsElements = array => array.map((it, index) => (
-    <option key={index} value={it}>
-      {it}
-    </option>
-  ));
+  const getOptionsElements = (array) =>
+    array.map((it, index) => (
+      <option key={index} value={it}>
+        {it}
+      </option>
+    ));
   const users = ["userName1", "userName2", "userName3"];
   const stations = ["stationName1", "stationName2", "stationName3"];
 
@@ -32,6 +33,15 @@ function ReactHookFormSample2() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
+
+      <input
+        // using required cause the form not be send
+        // placeholder is not working
+        type="checkbox"
+        // placeholder="Enabled"
+        name="enabled"
+        ref={register()}
+      />
       <input
         type="number"
         placeholder="Start Active Hour [0-23]"
