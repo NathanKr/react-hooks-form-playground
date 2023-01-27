@@ -17,7 +17,6 @@ export default function ReactHookFormSample3() {
 
   console.log(watch("example")); // watch input value by passing the name of it
   console.log(errors);
-  
 
   return (
     /* "handleSubmit" will validate your inputs before invoking "onSubmit" */
@@ -27,9 +26,11 @@ export default function ReactHookFormSample3() {
       <br />
       {/* include validation with required or other standard HTML validation rules */}
       <input {...register("exampleRequired", { required: true })} />
-      {/* errors will return when field validation fails  */}
-      {errors.exampleRequired && <span>This field is required</span>}
       <br />
+      {/* errors will return when field validation fails  */}
+      {errors.exampleRequired && (
+        <p style={{ color: "red" }}>This field is required</p>
+      )}
       <input type="submit" />
     </form>
   );

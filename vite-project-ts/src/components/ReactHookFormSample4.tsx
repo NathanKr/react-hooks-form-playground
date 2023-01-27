@@ -12,7 +12,7 @@ const ReactHookFormSample4 = () => {
     watch,
     formState: { errors },
   } = useForm<Inputs>({
-    defaultValues: { firstName: "John", lastName: "Deer" },
+    defaultValues: { firstName: "John", lastName: "Dee" },
   });
 
   const submitHnadler: SubmitHandler<Inputs> = (data) => console.log(data);
@@ -29,8 +29,7 @@ const ReactHookFormSample4 = () => {
           {...register("firstName", { required: "This is required" })}
           placeholder="First Name"
         />
-        <p>{errors.firstName?.message}</p>
-        <br />
+        <p style={{color:'red'}}>{errors.firstName?.message}</p>
         <input
           {...register("lastName", {
             required: true,
@@ -41,8 +40,7 @@ const ReactHookFormSample4 = () => {
           })}
           placeholder="Last Name"
         />
-        <p>{errors.lastName?.message}</p>
-        <br />
+        <p style={{color:'red'}}>{errors.lastName?.message}</p>
         <input type="submit" />
       </form>
     </div>
