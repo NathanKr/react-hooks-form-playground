@@ -6,6 +6,7 @@ import {
   useForm,
 } from "react-hook-form";
 import IRhfControllerBasedMuiTextField from "../types/i-rhf-controller-based-mui-text-field";
+import InputType from "../types/input-type";
 import RhfControllerBasedMuiTextField from "./gen-ui/rhf-controller-based-mui-text-field";
 
 interface IFormInputs {
@@ -28,19 +29,19 @@ const FormWithControllerForMui2Dry = () => {
       name: "author",
       label: "Author",
       rules: { required: "Author is required" },
-      htmlInputType: "text",
+      inputType: { htmlInputType: "text", type: InputType.Input },
     },
     {
       name: "email",
       label: "Email",
       rules: { required: "Email is required" },
-      htmlInputType: "email",
+      inputType: { htmlInputType: "email", type: InputType.Input },
     },
     {
       name: "description",
       label: "Description",
       rules: { required: "Description is required" },
-      htmlInputType: "text",
+      inputType: { type: InputType.Textarea , minRows : 4 },
     },
   ];
 
