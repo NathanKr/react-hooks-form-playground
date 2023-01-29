@@ -1,5 +1,5 @@
 import { SubmitHandler, useForm } from "react-hook-form";
-import styles from './form.module.css'
+import styles from '../styles/form.module.css'
 
 interface Inputs {
   name: string;
@@ -10,7 +10,7 @@ interface Inputs {
 }
 
 // --- not using mui
-const ContactUsVer1 = () => {
+const ContactUsMyUi = () => {
   const {
     register,
     handleSubmit,
@@ -50,4 +50,4 @@ const ContactUsVer1 = () => {
   );
 };
 
-export default ContactUsVer1;
+export default ContactUsMyUi;

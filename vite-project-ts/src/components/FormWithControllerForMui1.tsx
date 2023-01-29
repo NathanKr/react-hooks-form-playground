@@ -6,7 +6,7 @@ interface IFormInputs {
   MyCheckbox: boolean;
 }
 
-export function FormWithControllerForMui() {
+export function FormWithControllerForMui1() {
   const { handleSubmit, control } = useForm<IFormInputs>({
     defaultValues: {
       MyCheckbox: false,
