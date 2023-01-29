@@ -5,7 +5,7 @@ interface Inputs {
   exampleRequired: string;
 }
 
-export default function ReactHookFormSample3() {
+export default function ReactHookFormSimple1() {
   const {
     register,
     handleSubmit,

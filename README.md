@@ -9,7 +9,7 @@ Experiment with react form engine - react-hook-form
 
 <h2>Points of interest </h2>
 <ul>
-<li>useForm is used to create a react-hook-form form using my styling .check ReactHookFormSample4.tsx and ReactHookFormSample3.tsx</li>
+<li>useForm is used to create a react-hook-form form using my styling .check ReactHookFormSimple1.tsx and ReactHookFormSimple2.tsx</li>
 <li>useForm + Controller is used to create a react-hook-form form using external ui library - MUI. check FormWithControllerForMui1.tsx and FormWithControllerForMui2.tsx</li>
 <li>FormProvider + Controller + useFormContext is used to create generic MUI input to be used with react-hook-form form check RhfControllerBasedMuiTextField.tsx and FormWithControllerForMui2Dry.tsx</li>
 </ul>

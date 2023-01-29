@@ -5,7 +5,8 @@ interface Inputs {
   lastName: string;
 }
 
-const ReactHookFormSample4 = () => {
+const ReactHookFormSimple2
+ = () => {
   const {
     register,
     handleSubmit,
@@ -18,9 +19,7 @@ const ReactHookFormSample4 = () => {
   const submitHnadler: SubmitHandler<Inputs> = (data) => console.log(data);
 
   // -- render after every input change or fine grain it
-  console.log(watch()); 
-  
-
+  console.log(watch());
 
   return (
     <div>
@@ -29,7 +28,7 @@ const ReactHookFormSample4 = () => {
           {...register("firstName", { required: "This is required" })}
           placeholder="First Name"
         />
-        <p style={{color:'red'}}>{errors.firstName?.message}</p>
+        <p style={{ color: "red" }}>{errors.firstName?.message}</p>
         <input
           {...register("lastName", {
             required: true,
@@ -40,11 +39,12 @@ const ReactHookFormSample4 = () => {
           })}
           placeholder="Last Name"
         />
-        <p style={{color:'red'}}>{errors.lastName?.message}</p>
+        <p style={{ color: "red" }}>{errors.lastName?.message}</p>
         <input type="submit" />
       </form>
     </div>
   );
 };
 
-export default ReactHookFormSample4;
+export default ReactHookFormSimple2
+;
